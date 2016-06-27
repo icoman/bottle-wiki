@@ -1,0 +1,57 @@
+
+a { text-decoration: none; }
+a:link, a:visited { color: #27f; }
+a:hover {  COLOR: red;}
+
+html {
+	background: #fff;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-size: 100%; /* IE hack */
+}
+
+
+
+body {
+	text-align: left;
+	/* width: 1024px; */
+	padding: 20px;
+	font-size: 16px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+
+td {
+	padding: 5px;
+}
+
+.nf {
+	text-decoration : line-through;
+}
+
+
+
+
+tr:nth-child(even) {background: #e6f2ff;}
+tr:nth-child(odd) {background: #FFF;}
+
+
+.wikititle {
+	padding:20px;
+	background-color: #e6f2ff;
+	-webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);	
+}
+
+
+.wikivers {
+	float:right;
+	padding:25px;
+	background-color: #e6f2ff;
+	-webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.75);	
+	
+}
