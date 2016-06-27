@@ -38,7 +38,7 @@ bottle.TEMPLATE_PATH.insert(0,template_folder)
 #DSN = 'postgresql://ioan:***@localhost:5432/wiki'
 #DSN = 'mssql://ioan:123@localhost/wiki'
 #DSN = 'mssql+pymssql://ioan:123@localhost\sqlexpress/wiki'
-DSN = os.getenv('DSN','sqlite:///%s/wiki.db')
+DSN = os.getenv('DSN','sqlite:///wiki.db')
 
 
 app = bottle.Bottle()
