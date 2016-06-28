@@ -69,9 +69,6 @@ def auth(fn):
         if not path.startswith('/'):
             path = '/'+path
         user = bottle.request.get_cookie('account', secret=COOKIE_CRYPT_KEY)
-        if 0 == db.query(Users).count():
-            #populate table with some users
-            addUsers(db)
         #Password is not inside the cookie. The cookie is valid if password is correct in login form.
         if db.query(Users).filter(Users.username == user).count() > 0:
             return fn(**kwargs)
@@ -131,7 +128,7 @@ def callback(path):
 @auth
 def callback(db, path):
     '''
-        Add wiki page
+        Add a wiki page
     '''
     pagepath = u'/'+path
     action = bottle.request.forms.action
@@ -167,7 +164,7 @@ def callback(db, path):
 @auth
 def callback(db, path):
     '''
-        Edit wiki page
+        Edit a wiki page
     '''
     pagepath = u'/'+path
     action = bottle.request.forms.action
@@ -202,6 +199,9 @@ def callback(db, path):
     ver = int(bottle.request.query.get('v',0))
     user = bottle.request.get_cookie('account', secret=COOKIE_CRYPT_KEY)
     d_users = {}
+    if 0 == db.query(Users).count():
+        #populate table with some users
+        addUsers(db)
     for i in db.query(Users):
         d_users[i.id] = i.username
     if 0 == db.query(WikiPages).count():
